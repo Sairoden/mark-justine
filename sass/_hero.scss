@@ -1,0 +1,94 @@
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  width: 95%;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  &-introduction {
+    flex: 2 1 40rem;
+    text-align: center;
+
+    & p {
+      padding: 5rem 10rem;
+      color: var(--gray-text);
+    }
+
+    & h2 {
+      padding-top: 3rem;
+    }
+
+    & a {
+      padding: 2rem 8rem;
+      border: 3px solid black;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &-images {
+    flex: 1 1 40rem;
+    background: linear-gradient(#dad8dd, #dad1d4);
+    position: relative;
+    z-index: 1;
+  }
+
+  &-elena {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.plant {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  z-index: -1;
+  transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+  animation: plant-entrance 1.5s ease-in-out 0.5s forwards,
+    plant-shake 2.5s infinite ease alternate-reverse 2s;
+  transform-origin: bottom;
+  max-height: 80%;
+}
+
+.plant2 {
+  left: 40%;
+}
+
+// ANIMATIONS
+@keyframes opening {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes plant-entrance {
+  from {
+    transform: translateY(10%) rotateZ(-10deg) rotateX(-90deg);
+  }
+
+  to {
+    transform: translateY(0) rotateZ(0deg) rotateX(0);
+  }
+}
+
+@keyframes plant-shake {
+  from {
+    transform: rotateZ(-5deg);
+  }
+
+  to {
+    transform: rotateZ(0);
+  }
+}
+
+.burger,
+.menu-check {
+  display: none;
+}
